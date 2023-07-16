@@ -64,3 +64,19 @@
   * さらに.Kind()とすると型を取得できる
   * reflect.Array, reflect.Slice, reflect.Map Of(Type)で配列、スライス、マップのType型と比較できる
     * Kindで比較できない場合
+
+### 並行処理
+
+* go func(){}()で並行処理を行う
+* chanは他のスレッドに値を渡すことができる
+  * make(chan 型)で宣言
+  * chan <- 値で値を渡す
+  * 変数 := <- chanで値を受け取る
+  * チャンネルは値を受け取るまで待つ
+    * mainから送る時はgo func()の後にc <- iを書く
+  * 先入れ先出し
+* selectで複数のチャンネルを待ち受けることができる
+* mutexで排他制御を行う
+  * sync.Mutexを使う
+  * Lock()でロック
+  * Unlock()でロック解除
