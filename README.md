@@ -80,3 +80,9 @@
   * sync.Mutexを使う
   * Lock()でロック
   * Unlock()でロック解除
+
+## 第４章 Fyne
+
+* ./chapter4にgo modをやった
+
+### 基本的な使い方
