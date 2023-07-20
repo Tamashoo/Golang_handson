@@ -1,0 +1,4 @@
+*** start ***
+test
+hogehoge
+*** end ***
