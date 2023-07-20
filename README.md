@@ -86,3 +86,30 @@
 * ./chapter4にgo modをやった
 
 ### 基本的な使い方
+
+## 第５章
+
+### ネットワークアクセス
+
+* net/httpのhttp.Get()でGETリクエストを送信できる
+  * メインの内容は.Bodyで取得できる
+
+#### goquery
+
+* 最初にHTMLからDocument構造体を作成する
+  * goquery.NewDocument(address), qoquery.NewDocumentFromResponse(Response), 
+  goquery.NewDocumentFromReader(io.Reader)
+* Find()でCSSセレクタを指定して要素を取得する
+  * Document.Find(selector)で取得、Selectionという構造体が返る
+    * Selection.Text()でテキストを取得できる
+    * Selection.Attr()で属性を取得できる
+    * Selection.Each()で繰り返し処理ができる
+      * func(n int, sel *goquery.Selection)でnは繰り返し回数、selはSelection
+* aタグはurl、href属性はリンク先のurlを指定する
+
+#### encoding/json
+
+* json.Unmarshal()でJSONを構造体に変換できる
+  * 第一引数にJSONのbyte配列、第二引数に構造体のポインタを指定する
+* jsonの各値はキーと値のペアで表される
+  * m := im.(map[string]interface{})で型アサーションを行う
